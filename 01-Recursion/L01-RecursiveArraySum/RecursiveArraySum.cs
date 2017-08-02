@@ -21,7 +21,7 @@ namespace L01_RecursiveArraySum
         private static long Sum(int[] numbers)
         {
             long sum = 0;
-            for (var i = numbers.Length; i > 0; i--)
+            for (var i = numbers.Length; i --> 0;)
             {
                 sum += numbers[i];
             }
