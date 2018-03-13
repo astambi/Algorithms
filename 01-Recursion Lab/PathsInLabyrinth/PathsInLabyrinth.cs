@@ -49,7 +49,7 @@
         }
 
         private static void PrintPath()
-          => Console.WriteLine(string.Join(string.Empty, path.Skip(1)));
+            => Console.WriteLine(string.Join(string.Empty, path.Skip(1)));
 
         private static void UnmarkVisited(int row, int col)
             => labyrinth[row][col] = PassableCell;
