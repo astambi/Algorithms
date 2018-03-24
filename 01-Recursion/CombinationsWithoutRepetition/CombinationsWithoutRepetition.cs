@@ -1,30 +1,32 @@
-﻿namespace NestedLoops
+﻿namespace CombinationsWithoutRepetition
 {
     using System;
 
-    public class NestedLoops
+    public class CombinationsWithoutRepetition
     {
         private static int[] elements;
 
         public static void Main()
         {
-            GetElements();
-            Combinations(new int[elements.Length], 0, 0); // n
+            var n = int.Parse(Console.ReadLine());
+            var k = int.Parse(Console.ReadLine());
+
+            GetElements(n);
+            GenerateCombination(new int[k], 0, 0);
         }
 
-        private static void Combinations(int[] combination, int index, int border)
+        private static void GenerateCombination(int[] combination, int index, int border)
         {
-            if (index == combination.Length)
+            if (index == combination.Length) // k
             {
                 Print(combination);
             }
             else
             {
-                for (int current = 0; current < elements.Length; current++)
+                for (int current = border; current < elements.Length; current++)
                 {
                     combination[index] = elements[current];
-
-                    Combinations(combination, index + 1, current);
+                    GenerateCombination(combination, index + 1, current + 1);
                 }
             }
         }
@@ -32,11 +34,9 @@
         private static void Print(int[] combination)
             => Console.WriteLine(string.Join(" ", combination));
 
-        private static void GetElements()
+        private static void GetElements(int n)
         {
-            var n = int.Parse(Console.ReadLine());
             elements = new int[n];
-
             for (int i = 0; i < n; i++)
             {
                 elements[i] = i + 1;

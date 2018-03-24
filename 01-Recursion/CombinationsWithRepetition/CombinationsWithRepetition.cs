@@ -4,45 +4,44 @@
 
     public class CombinationsWithRepetition
     {
+        private static int[] elements;
+
         public static void Main()
         {
             var n = int.Parse(Console.ReadLine());
             var k = int.Parse(Console.ReadLine());
-            if (n <= 0 || k <= 0)
-            {
-                return;
-            }
 
-            var elements = GetElements(n);
-            var combination = new int[k];
-            GenerateCombination(combination, elements, 0, 0);
+            GetElements(n);
+            GenerateCombination(new int[k], 0, 0);
         }
 
-        private static void GenerateCombination(int[] combination, int[] elements, int index, int border)
+        private static void GenerateCombination(int[] combination, int index, int border)
         {
-            if (index == combination.Length)
+            if (index == combination.Length) // k
             {
-                Console.WriteLine(string.Join(" ", combination));
+                Print(combination);
             }
             else
             {
-                for (int i = border; i < elements.Length; i++)
+                for (int current = border; current < elements.Length; current++)
                 {
-                    combination[index] = elements[i];
-                    GenerateCombination(combination, elements, index + 1, i);
+                    combination[index] = elements[current];
+
+                    GenerateCombination(combination, index + 1, current);
                 }
             }
         }
 
-        private static int[] GetElements(int n)
+        private static void Print(int[] combination)
+            => Console.WriteLine(string.Join(" ", combination));
+
+        private static void GetElements(int n)
         {
-            var elements = new int[n];
+            elements = new int[n];
             for (int i = 0; i < n; i++)
             {
                 elements[i] = i + 1;
             }
-
-            return elements;
         }
     }
 }

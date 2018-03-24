@@ -1,4 +1,4 @@
-﻿namespace ReverseArray
+﻿namespace ReverseArrayWithList
 {
     using System;
     using System.Collections.Generic;
@@ -6,26 +6,25 @@
 
     public class ReverseArray
     {
-        private static Stack<int> reversedArr = new Stack<int>();
+        private static List<int> reversedArr = new List<int>();
 
         public static void Main()
         {
             var arr = ReadArray();
             Reverse(arr, 0);
+            Console.WriteLine(string.Join(" ", reversedArr));
         }
 
         private static void Reverse(int[] arr, int index)
         {
             if (index == arr.Length)
             {
-                Console.WriteLine(string.Join(" ", reversedArr));
+                return;
             }
-            else
-            {
-                reversedArr.Push(arr[index]);
 
-                Reverse(arr, index + 1);
-            }
+            Reverse(arr, index + 1);
+
+            reversedArr.Add(arr[index]);
         }
 
         private static int[] ReadArray()
