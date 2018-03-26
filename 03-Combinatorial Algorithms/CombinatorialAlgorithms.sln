@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariationsWithoutRepetition", "VariationsWithoutRepetition\VariationsWithoutRepetition.csproj", "{B45BBEF5-F61B-4258-B504-0838E0563030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VariationsWithoutRepetition", "VariationsWithoutRepetition\VariationsWithoutRepetition.csproj", "{B45BBEF5-F61B-4258-B504-0838E0563030}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermutationsWithoutRepetition", "PermutationsWithoutRepetition\PermutationsWithoutRepetition.csproj", "{6EE73037-087D-41D9-8381-E450F6464B24}"
 EndProject
@@ -13,15 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermutationsWithRepetition"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermutationsWithRepetitionOptimized", "PermutationsWithRepetitionOptimized\PermutationsWithRepetitionOptimized.csproj", "{928DD97F-A398-4664-9F50-4160264253FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariationsWithRepetition", "VariationsWithRepetition\VariationsWithRepetition.csproj", "{AB01CB5E-1042-49AB-922D-B0C52C672B44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VariationsWithRepetition", "VariationsWithRepetition\VariationsWithRepetition.csproj", "{AB01CB5E-1042-49AB-922D-B0C52C672B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariationsWithRepetitionIterative", "VariationsWithRepetitionIterative\VariationsWithRepetitionIterative.csproj", "{23EA0AEB-261C-44ED-A454-74E5FBADED50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VariationsWithRepetitionIterative", "VariationsWithRepetitionIterative\VariationsWithRepetitionIterative.csproj", "{23EA0AEB-261C-44ED-A454-74E5FBADED50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationsWithoutRepetition", "CombinationsWithoutRepetition\CombinationsWithoutRepetition.csproj", "{8D1D09A8-B1D1-4F2A-9D22-E9D00A446033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CombinationsWithoutRepetition", "CombinationsWithoutRepetition\CombinationsWithoutRepetition.csproj", "{8D1D09A8-B1D1-4F2A-9D22-E9D00A446033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinationsWithRepetition", "CombinationsWithRepetition\CombinationsWithRepetition.csproj", "{51C90FCE-1519-441F-899F-8321A07A507E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CombinationsWithRepetition", "CombinationsWithRepetition\CombinationsWithRepetition.csproj", "{51C90FCE-1519-441F-899F-8321A07A507E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NChooseKCount", "NChooseKCount\NChooseKCount.csproj", "{00B4905C-A1DA-40B3-9CBD-C78CDAC06BEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NChooseKCount", "NChooseKCount\NChooseKCount.csproj", "{00B4905C-A1DA-40B3-9CBD-C78CDAC06BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsWithoutRepetitionIterative", "PermutationsWithoutRepetitionIterative\PermutationsWithoutRepetitionIterative.csproj", "{21071B48-5F1A-4F5A-8A00-789A7A56AB3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snakes", "Snakes\Snakes.csproj", "{02FD3962-C202-422C-87D5-7FC3B371BAAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{00B4905C-A1DA-40B3-9CBD-C78CDAC06BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B4905C-A1DA-40B3-9CBD-C78CDAC06BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B4905C-A1DA-40B3-9CBD-C78CDAC06BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21071B48-5F1A-4F5A-8A00-789A7A56AB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21071B48-5F1A-4F5A-8A00-789A7A56AB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21071B48-5F1A-4F5A-8A00-789A7A56AB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21071B48-5F1A-4F5A-8A00-789A7A56AB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02FD3962-C202-422C-87D5-7FC3B371BAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02FD3962-C202-422C-87D5-7FC3B371BAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02FD3962-C202-422C-87D5-7FC3B371BAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02FD3962-C202-422C-87D5-7FC3B371BAAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
