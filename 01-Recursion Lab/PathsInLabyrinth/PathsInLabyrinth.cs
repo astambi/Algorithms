@@ -15,7 +15,7 @@
 
         public static void Main()
         {
-            labyrinth = ReadLabyrinth();
+            ReadLabyrinth();
             FindPath(0, 0, 'S');
         }
 
@@ -32,11 +32,10 @@
             {
                 PrintPath();
             }
-            else if (!IsVisited(row, col) && IsPassable(row, col))
+            else if (IsPassable(row, col)) // => not visited, not wall
             {
                 MarkVisited(row, col);
 
-                // Find Paths
                 FindPath(row, col - 1, 'L');
                 FindPath(row, col + 1, 'R');
                 FindPath(row - 1, col, 'U');
@@ -70,18 +69,16 @@
             => 0 <= row && row < labyrinth.Length
             && 0 <= col && col < labyrinth[row].Length;
 
-        private static char[][] ReadLabyrinth()
+        private static void ReadLabyrinth()
         {
             var rows = int.Parse(Console.ReadLine());
             var cols = int.Parse(Console.ReadLine());
+            labyrinth = new char[rows][];
 
-            var labyrinth = new char[rows][];
             for (int row = 0; row < rows; row++)
             {
                 labyrinth[row] = Console.ReadLine().ToCharArray();
             }
-
-            return labyrinth;
         }
     }
 }

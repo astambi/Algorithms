@@ -70,10 +70,10 @@
         {
             Console.WriteLine($"Total areas found: {areas.Count}");
 
-            var areasFound = 0;
+            var currentArea = 0;
             foreach (var area in areas)
             {
-                Console.WriteLine($"Area #{++areasFound} at ({area.Row}, {area.Col}), size: {area.Size}");
+                Console.WriteLine($"Area #{++currentArea} at ({area.Row}, {area.Col}), size: {area.Size}");
             }
         }
 
