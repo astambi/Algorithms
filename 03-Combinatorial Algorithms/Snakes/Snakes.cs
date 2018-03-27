@@ -28,14 +28,13 @@
         {
             if (index >= snakePath.Length)
             {
-                var snake = new string(snakePath);
-
                 if (snakePath.Length == 1)
                 {
-                    Console.WriteLine(snake);
+                    Print();
                     return;
                 }
 
+                var snake = new string(snakePath);
                 if (!snakes.Contains(snake))
                 {
                     MarkIdentical(snake);
@@ -44,7 +43,6 @@
             else
             {
                 var currentPosition = $"{row} {col}";
-
                 if (!visitedPositions.Contains(currentPosition))
                 {
                     visitedPositions.Add(currentPosition);
@@ -71,14 +69,14 @@
                 snakes.Add(reversed);
                 snakes.Add(flipped);
 
-                Console.WriteLine(snake);
                 snakesCount++;
+                Print();
             }
         }
 
         private static char[] Rotate(char[] snake)
         {
-            while (snake[1] != Right)
+            while (snake[1] != Right) // SR-type
             {
                 for (int i = 0; i < snake.Length; i++)
                 {
@@ -96,7 +94,9 @@
             return snake;
         }
 
-        private static string Flip(string snake)
+        // X-flipped, SR-rotated path == Y-flipped, SR-rotated 
+        // => verifying only X-flipped, SR-rotated paths
+        private static string Flip(string snake) // SRRU => SRRD 
         {
             var flipped = new char[snake.Length];
 
@@ -110,10 +110,10 @@
                 }
             }
 
-            return new string(Rotate(flipped)); // return right rotated
+            return new string(Rotate(flipped)); // SR-type
         }
 
-        private static string Reverse(string snake)
+        private static string Reverse(string snake) // SRRU => SDLL
         {
             var reversed = new char[snake.Length];
             reversed[0] = snake[0];
@@ -121,15 +121,26 @@
             for (int i = 1; i < snake.Length; i++)
             {
                 reversed[i] = snake[snake.Length - i];
+
+                //switch (snake[snake.Length - i])
+                //{
+                //    case Up: reversed[i] = Down; break;
+                //    case Down: reversed[i] = Up; break;
+                //    case Left: reversed[i] = Right; break;
+                //    case Right: reversed[i] = Left; break;
+                //    default: break;
+                //}
             }
 
-            return new string(Rotate(reversed)); // return right rotated
+            return new string(Rotate(reversed)); // SR-type
         }
+
+        private static void Print()
+            => Console.WriteLine(string.Join(string.Empty, snakePath));
 
         private static void InitializeSnakePath()
         {
             var length = int.Parse(Console.ReadLine());
-
             snakePath = new char[length];
             snakePath[0] = 'S';
 
