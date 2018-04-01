@@ -1,5 +1,5 @@
-﻿namespace SetCover.Tests
-{
+﻿//namespace SetCover.Tests
+//{
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -150,4 +150,4 @@
             CollectionAssert.AreEqual(expectedResult, selectedSets);
         }
     }
-}
+//}

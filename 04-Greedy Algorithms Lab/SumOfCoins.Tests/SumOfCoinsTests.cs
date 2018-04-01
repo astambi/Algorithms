@@ -1,5 +1,5 @@
-﻿namespace SumOfCoins.Tests
-{
+﻿//namespace SumOfCoins.Tests
+//{
     using System;
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -158,4 +158,4 @@
             CollectionAssert.AreEqual(expectedResult, selectedCoins);
         }
     }
-}
+//}

@@ -1,5 +1,5 @@
-﻿namespace SumOfCoins
-{
+﻿//namespace SumOfCoins
+//{
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -51,4 +51,4 @@
             return selectedCoins;
         }
     }
-}
+//}
