@@ -6,6 +6,8 @@
 
     public class LongestIncreasingSubsequence
     {
+        private static int maxSolutionLenIndex;
+
         public static void Main()
         {
             var numbers = Console.ReadLine()
@@ -13,28 +15,35 @@
                 .Select(int.Parse)
                 .ToArray();
 
+            var prevIndices = FindLongestIncreasingSeq(numbers);
+
+            ReconstructSolution(numbers, prevIndices);
+        }
+
+        private static int[] FindLongestIncreasingSeq(int[] numbers)
+        {
             var solutionsLen = new int[numbers.Length];
             var prevIndices = new int[numbers.Length];
 
             var maxSolutionLen = 0;
-            var maxSolutionLenIndex = 0;
 
             for (int current = 0; current < numbers.Length; current++)
             {
                 var solutionLen = 1;
                 var prevIndex = -1;
+
                 var currentNumber = numbers[current];
 
-                for (int solIndex = 0; solIndex < current; solIndex++)
+                for (int prev = 0; prev < current; prev++)
                 {
-                    var prevNumber = numbers[solIndex];
-                    var prevSolutionLen = solutionsLen[solIndex];
+                    var prevNumber = numbers[prev];
+                    var prevSolutionLen = solutionsLen[prev];
 
                     if (currentNumber > prevNumber
                         && solutionLen <= prevSolutionLen)
                     {
                         solutionLen = prevSolutionLen + 1;
-                        prevIndex = solIndex;
+                        prevIndex = prev;
                     }
                 }
 
@@ -48,8 +57,13 @@
                 }
             }
 
-            // Reconstruct Longest Increasing Seq
+            return prevIndices;
+        }
+
+        private static void ReconstructSolution(int[] numbers, int[] prevIndices)
+        {
             var longestSeq = new Stack<int>();
+
             var index = maxSolutionLenIndex;
 
             while (index != -1)

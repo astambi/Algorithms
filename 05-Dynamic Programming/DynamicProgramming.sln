@@ -3,11 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{6039466E-37BA-4D8A-9F52-7CAC12D1FC1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{6039466E-37BA-4D8A-9F52-7CAC12D1FC1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestIncreasingSubsequence", "LongestIncreasingSubsequence\LongestIncreasingSubsequence.csproj", "{A68C2DC6-78BE-4934-8A36-35EE8F4A97B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LongestIncreasingSubsequence", "LongestIncreasingSubsequence\LongestIncreasingSubsequence.csproj", "{A68C2DC6-78BE-4934-8A36-35EE8F4A97B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveDownRight", "MoveDownRight\MoveDownRight.csproj", "{2BEB6AA5-FAE6-47C0-AA5F-8AC9D617B485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveDownRight", "MoveDownRight\MoveDownRight.csproj", "{2BEB6AA5-FAE6-47C0-AA5F-8AC9D617B485}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RodCutting", "RodCutting\RodCutting.csproj", "{BF0A4389-2118-4AF6-B4E1-11BEC8F42FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack", "Knapsack\Knapsack.csproj", "{3280572A-FC61-4D92-BF0D-CD6E3FDC6FDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubsetSumNoRepeats", "SubsetSumNoRepeats\SubsetSumNoRepeats.csproj", "{3486DCC5-D018-4D8F-9F78-182D004455BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubsetSumWithRepeats", "SubsetSumWithRepeats\SubsetSumWithRepeats.csproj", "{80782507-D885-4C85-AB5A-3ED814F6959A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonSubsequence", "LongestCommonSubsequence\LongestCommonSubsequence.csproj", "{4143C447-C231-4FEF-8A4D-2F990923FEE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +37,26 @@ Global
 		{2BEB6AA5-FAE6-47C0-AA5F-8AC9D617B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BEB6AA5-FAE6-47C0-AA5F-8AC9D617B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BEB6AA5-FAE6-47C0-AA5F-8AC9D617B485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0A4389-2118-4AF6-B4E1-11BEC8F42FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0A4389-2118-4AF6-B4E1-11BEC8F42FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0A4389-2118-4AF6-B4E1-11BEC8F42FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0A4389-2118-4AF6-B4E1-11BEC8F42FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3280572A-FC61-4D92-BF0D-CD6E3FDC6FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3280572A-FC61-4D92-BF0D-CD6E3FDC6FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3280572A-FC61-4D92-BF0D-CD6E3FDC6FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3280572A-FC61-4D92-BF0D-CD6E3FDC6FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3486DCC5-D018-4D8F-9F78-182D004455BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3486DCC5-D018-4D8F-9F78-182D004455BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3486DCC5-D018-4D8F-9F78-182D004455BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3486DCC5-D018-4D8F-9F78-182D004455BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80782507-D885-4C85-AB5A-3ED814F6959A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80782507-D885-4C85-AB5A-3ED814F6959A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80782507-D885-4C85-AB5A-3ED814F6959A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80782507-D885-4C85-AB5A-3ED814F6959A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4143C447-C231-4FEF-8A4D-2F990923FEE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4143C447-C231-4FEF-8A4D-2F990923FEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4143C447-C231-4FEF-8A4D-2F990923FEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4143C447-C231-4FEF-8A4D-2F990923FEE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
