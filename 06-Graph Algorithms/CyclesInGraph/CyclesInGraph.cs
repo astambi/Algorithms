@@ -1,33 +1,30 @@
-﻿namespace BreakCycles
+﻿namespace CyclesInGraph
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    public class BreakCycles
+    public class CyclesInGraph
     {
-        private static SortedDictionary<char, List<char>> graph = new SortedDictionary<char, List<char>>();
+        private static Dictionary<char, List<char>> graph = new Dictionary<char, List<char>>();
+        private static bool isAcyclic = true;
 
-        public static void Main()
+        public static void Main(string[] args)
         {
             ReadGraph();
 
-            var edgesToRemove = new List<string>();
-
-            foreach (var nodeKvp in graph)
+            foreach (var startNode in graph.Keys)
             {
-                var startNode = nodeKvp.Key;
-                var sortedEndNodes = graph[startNode].OrderBy(e => e);
-
-                foreach (var endNode in sortedEndNodes)
+                foreach (var endNode in graph[startNode].ToList())
                 {
-                    // Remove edge
+                    // Remove edge between nodes
                     graph[startNode].Remove(endNode);
                     graph[endNode].Remove(startNode);
 
                     if (HasPath(startNode, endNode)) // cycle
                     {
-                        edgesToRemove.Add($"{startNode} - {endNode}");
+                        isAcyclic = false;
+                        break;
                     }
                     else
                     {
@@ -36,15 +33,14 @@
                         graph[endNode].Add(startNode);
                     }
                 }
+
+                if (!isAcyclic)
+                {
+                    break;
+                }
             }
 
-            Print(edgesToRemove);
-        }
-
-        private static void Print(List<string> edgesToRemove)
-        {
-            Console.WriteLine($"Edges to remove: {edgesToRemove.Count}");
-            edgesToRemove.ForEach(Console.WriteLine);
+            Console.WriteLine($"Acyclic: {(isAcyclic ? "Yes" : "No")}");
         }
 
         private static bool HasPath(char start, char end)
@@ -87,20 +83,22 @@
                     break;
                 }
 
-                var tokens = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var tokens = input.ToCharArray();
+                var first = tokens[0];
+                var second = tokens[2];
 
-                var node = tokens[0][0];
-                var otherNodes = tokens
-                    .Skip(2)
-                    .Select(x => x[0])
-                    .ToList();
-
-                if (!graph.ContainsKey(node))
+                if (!graph.ContainsKey(first))
                 {
-                    graph[node] = new List<char>();
+                    graph[first] = new List<char>();
                 }
 
-                graph[node].AddRange(otherNodes);
+                if (!graph.ContainsKey(second))
+                {
+                    graph[second] = new List<char>();
+                }
+
+                graph[first].Add(second);
+                graph[second].Add(first);
             }
         }
     }
