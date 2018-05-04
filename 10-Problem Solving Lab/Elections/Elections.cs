@@ -11,47 +11,47 @@
             var targetSum = int.Parse(Console.ReadLine());
             var numbers = ReadNumbers();
 
-            var sums = CalcSums(numbers);
+            var sumCounts = CalcSumCounts(numbers);
 
-            var count = CountMatchingSums(targetSum, sums);
+            var count = CountMatchingSums(targetSum, sumCounts);
             Console.WriteLine(count);
         }
 
-        private static BigInteger CountMatchingSums(int targetSum, BigInteger[] sums)
+        private static BigInteger CountMatchingSums(int targetSum, BigInteger[] sumCounts)
         {
             BigInteger count = 0;
-            for (int sum = targetSum; sum < sums.Length; sum++)
+            for (int sum = targetSum; sum < sumCounts.Length; sum++)
             {
-                count += sums[sum];
+                count += sumCounts[sum];
             }
 
             return count;
         }
 
-        private static BigInteger[] CalcSums(int[] numbers)
+        private static BigInteger[] CalcSumCounts(int[] numbers)
         {
-            var sums = new BigInteger[numbers.Sum() + 1]; // sums => possible combinations
-            sums[0] = 1; // visited
+            var sumCounts = new BigInteger[numbers.Sum() + 1]; // sum => count possible combinations
+            sumCounts[0] = 1;
 
             foreach (var number in numbers)
             {
-                for (int i = sums.Length - 1; i >= 0; i--)
+                for (int sum = sumCounts.Length - 1; sum >= 0; sum--) // traversing sums backwards
                 {
-                    if (sums[i] != 0)
+                    if (sumCounts[sum] != 0)
                     {
-                        sums[i + number] += sums[i];
+                        sumCounts[sum + number] += sumCounts[sum];
                     }
                 }
             }
 
-            return sums;
+            return sumCounts;
         }
 
         private static int[] ReadNumbers()
         {
             var numbersCount = int.Parse(Console.ReadLine());
-
             var numbers = new int[numbersCount];
+
             for (int i = 0; i < numbersCount; i++)
             {
                 numbers[i] = int.Parse(Console.ReadLine());
