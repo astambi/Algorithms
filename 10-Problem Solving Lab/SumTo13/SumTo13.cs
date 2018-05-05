@@ -14,21 +14,17 @@
                 .Select(int.Parse)
                 .ToArray();
 
-            if (numbers[0] + numbers[1] + numbers[2] == TargetSum
+            var isTargetSum =
+                numbers[0] + numbers[1] + numbers[2] == TargetSum
                 || numbers[0] + numbers[1] - numbers[2] == TargetSum
                 || numbers[0] - numbers[1] + numbers[2] == TargetSum
                 || numbers[0] - numbers[1] - numbers[2] == TargetSum
                 || -numbers[0] + numbers[1] + numbers[2] == TargetSum
                 || -numbers[0] + numbers[1] - numbers[2] == TargetSum
                 || -numbers[0] - numbers[1] + numbers[2] == TargetSum
-                || -numbers[0] - numbers[1] - numbers[2] == TargetSum)
-            {
-                Console.WriteLine("Yes");
-            }
-            else
-            {
-                Console.WriteLine("No");
-            }
+                || -numbers[0] - numbers[1] - numbers[2] == TargetSum;
+
+            Console.WriteLine(isTargetSum ? "Yes" : "No");
         }
     }
 }
