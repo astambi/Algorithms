@@ -5,9 +5,13 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blocks", "Blocks\Blocks.csproj", "{C325C269-BF42-43CE-9279-48CB363F89A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocksOptimized", "BlocksOptimized\BlocksOptimized.csproj", "{6F20AFFA-050A-4B26-A6FF-65A87C2A6508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlocksOptimized", "BlocksOptimized\BlocksOptimized.csproj", "{6F20AFFA-050A-4B26-A6FF-65A87C2A6508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZigzagMatrix", "ZigzagMatrix\ZigzagMatrix.csproj", "{D3584587-FA58-4B21-92D0-A35A9532EB78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZigzagMatrix", "ZigzagMatrix\ZigzagMatrix.csproj", "{D3584587-FA58-4B21-92D0-A35A9532EB78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortestPathInMatrix", "ShortestPathInMatrix\ShortestPathInMatrix.csproj", "{C3B3242D-46AF-4D85-9A97-EA17E612DAAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RectangleIntersection", "RectangleIntersection\RectangleIntersection.csproj", "{19B0D552-DCFD-485F-B326-326448975D97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{D3584587-FA58-4B21-92D0-A35A9532EB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3584587-FA58-4B21-92D0-A35A9532EB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3584587-FA58-4B21-92D0-A35A9532EB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B3242D-46AF-4D85-9A97-EA17E612DAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B3242D-46AF-4D85-9A97-EA17E612DAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B3242D-46AF-4D85-9A97-EA17E612DAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B3242D-46AF-4D85-9A97-EA17E612DAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B0D552-DCFD-485F-B326-326448975D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B0D552-DCFD-485F-B326-326448975D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B0D552-DCFD-485F-B326-326448975D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B0D552-DCFD-485F-B326-326448975D97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
