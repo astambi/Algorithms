@@ -78,7 +78,6 @@
                             if (maxPaths[prevRow][prevCol] > prevMax)
                             {
                                 prevMax = maxPaths[prevRow][prevCol];
-
                                 maxPaths[row][col] = prevMax + matrix[row][col];
                                 prevRowIndices[row][col] = prevRow;
                             }
