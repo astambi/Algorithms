@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guitar", "Guitar\Guitar.csproj", "{2E8AE44B-09A2-4BC0-8534-5161DA3E60D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestPath", "ShortestPath\ShortestPath.csproj", "{A121AE38-485D-4889-9F26-1FD8E01B8346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarsInTheCube", "StarsInTheCube\StarsInTheCube.csproj", "{FBA4DAB1-3839-4C11-AE19-CF327A9F4B94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E8AE44B-09A2-4BC0-8534-5161DA3E60D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8AE44B-09A2-4BC0-8534-5161DA3E60D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8AE44B-09A2-4BC0-8534-5161DA3E60D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8AE44B-09A2-4BC0-8534-5161DA3E60D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A121AE38-485D-4889-9F26-1FD8E01B8346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A121AE38-485D-4889-9F26-1FD8E01B8346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A121AE38-485D-4889-9F26-1FD8E01B8346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A121AE38-485D-4889-9F26-1FD8E01B8346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA4DAB1-3839-4C11-AE19-CF327A9F4B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA4DAB1-3839-4C11-AE19-CF327A9F4B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA4DAB1-3839-4C11-AE19-CF327A9F4B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA4DAB1-3839-4C11-AE19-CF327A9F4B94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90A4A25D-666A-4752-BFFD-AF44A6BA430B}
+	EndGlobalSection
+EndGlobal
