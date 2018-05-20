@@ -5,7 +5,7 @@
 
     public class BlackMessup
     {
-        private static Dictionary<string, Atom> atoms = new Dictionary<string, Atom>(); // atom name => atom
+        private static Dictionary<string, Atom> atoms = new Dictionary<string, Atom>(); // name => atom
         private static Dictionary<string, HashSet<Atom>> graph = new Dictionary<string, HashSet<Atom>>(); // atom => connected atoms
 
         public static void Main()
@@ -18,11 +18,11 @@
 
             var molecules = FindConnectedComponents();
 
-            var maxMass = FindMoleculeMaxMass(molecules);
+            var maxMass = FindMaxMass(molecules);
             Console.WriteLine(maxMass);
         }
 
-        private static int FindMoleculeMaxMass(List<SortedSet<Atom>> molecules)
+        private static int FindMaxMass(List<SortedSet<Atom>> molecules)
         {
             var maxMass = 0;
 
@@ -38,9 +38,9 @@
             return maxMass;
         }
 
-        private static int GetMass(SortedSet<Atom> molecule)
+        private static int GetMass(SortedSet<Atom> molecule) // Greedy
         {
-            var totalMass = 0;
+            var moleculeMass = 0;
             var maxDecay = 1;
             var count = 0;
 
@@ -50,32 +50,31 @@
                 {
                     maxDecay = atom.Decay;
 
-                    totalMass += atom.Mass;
+                    moleculeMass += atom.Mass;
                     count++;
                 }
                 else if (maxDecay > count)
                 {
-                    totalMass += atom.Mass;
+                    moleculeMass += atom.Mass;
                     count++;
                 }
             }
 
-            return totalMass;
+            return moleculeMass;
         }
 
         private static List<SortedSet<Atom>> FindConnectedComponents()
         {
-            var visited = new HashSet<string>();
-
             var modecules = new List<SortedSet<Atom>>();
+            var visited = new HashSet<string>();
             var moleculeIndex = 0;
 
-            foreach (var node in graph.Keys)
+            foreach (var atomName in graph.Keys)
             {
-                if (!visited.Contains(node))
+                if (!visited.Contains(atomName))
                 {
                     modecules.Add(new SortedSet<Atom>());
-                    DFS(node, visited, modecules, moleculeIndex);
+                    MarkConnectedDFS(atomName, visited, modecules, moleculeIndex);
 
                     moleculeIndex++;
                 }
@@ -84,17 +83,16 @@
             return modecules;
         }
 
-        private static void DFS(string node, HashSet<string> visited, List<SortedSet<Atom>> molecules, int moleculeIndex)
+        private static void MarkConnectedDFS(string atomName, HashSet<string> visited, List<SortedSet<Atom>> molecules, int moleculeIndex)
         {
-            visited.Add(node);
+            visited.Add(atomName);
+            molecules[moleculeIndex].Add(atoms[atomName]);
 
-            molecules[moleculeIndex].Add(atoms[node]);
-
-            foreach (var child in graph[node])
+            foreach (var atom in graph[atomName])
             {
-                if (!visited.Contains(child.Name))
+                if (!visited.Contains(atom.Name))
                 {
-                    DFS(child.Name, visited, molecules, moleculeIndex);
+                    MarkConnectedDFS(atom.Name, visited, molecules, moleculeIndex);
                 }
             }
         }
@@ -105,11 +103,11 @@
             {
                 var tokens = Console.ReadLine().Split();
 
-                var firstName = tokens[0];
-                var secondName = tokens[1];
+                var firstAtom = tokens[0];
+                var secondAtom = tokens[1];
 
-                graph[firstName].Add(atoms[secondName]);
-                graph[secondName].Add(atoms[firstName]);
+                graph[firstAtom].Add(atoms[secondAtom]);
+                graph[secondAtom].Add(atoms[firstAtom]);
             }
         }
 

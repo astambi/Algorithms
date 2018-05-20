@@ -6,7 +6,7 @@
     public class Balls
     {
         private static int pockets;
-        private static int capacity;
+        private static int pocketCapacity;
         private static int[] result;
         private static StringBuilder builder = new StringBuilder();
 
@@ -14,7 +14,7 @@
         {
             pockets = int.Parse(Console.ReadLine());
             var balls = int.Parse(Console.ReadLine());
-            capacity = int.Parse(Console.ReadLine());
+            pocketCapacity = int.Parse(Console.ReadLine());
 
             result = new int[pockets];
 
@@ -23,11 +23,11 @@
             Console.WriteLine(builder.ToString().Trim());
         }
 
-        private static void Generate(int index, int ballsLeft)
+        private static void Generate(int pocketIndex, int remainingBalls)
         {
-            if (index == pockets)
+            if (pocketIndex == pockets)
             {
-                if (ballsLeft == 0)
+                if (remainingBalls == 0)
                 {
                     builder.AppendLine(string.Join(", ", result));
                 }
@@ -35,16 +35,12 @@
                 return;
             }
 
-            var ballsToPut = ballsLeft - (pockets - (index + 1));
-            if (ballsToPut > capacity)
-            {
-                ballsToPut = capacity;
-            }
+            var ballsToUse = Math.Min(pocketCapacity, remainingBalls - (pockets - 1 - pocketIndex));
 
-            for (int i = ballsToPut; i >= 1; i--)
+            for (int usedBalls = ballsToUse; usedBalls >= 1; usedBalls--)
             {
-                result[index] = i;
-                Generate(index + 1, ballsLeft - i);
+                result[pocketIndex] = usedBalls;
+                Generate(pocketIndex + 1, remainingBalls - usedBalls);
             }
         }
     }

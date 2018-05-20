@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackMessup", "BlackMessup\BlackMessup.csproj", "{AE3EA4F4-3FFE-4B64-B1F1-F815C902BA05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbaspaBasapa", "AbaspaBasapa\AbaspaBasapa.csproj", "{CE74D51D-3F6B-40C7-A389-26DC0EE15CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbaspaBasapa", "AbaspaBasapa\AbaspaBasapa.csproj", "{CE74D51D-3F6B-40C7-A389-26DC0EE15CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balls", "Balls\Balls.csproj", "{CB4BCEB0-5C15-4381-A7D4-C51756222322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Balls", "Balls\Balls.csproj", "{CB4BCEB0-5C15-4381-A7D4-C51756222322}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatestStrategy", "GreatestStrategy\GreatestStrategy.csproj", "{4549F8E5-6CD0-41B7-8F0B-F1BDD52AA566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatestStrategy", "GreatestStrategy\GreatestStrategy.csproj", "{4549F8E5-6CD0-41B7-8F0B-F1BDD52AA566}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
