@@ -63,12 +63,14 @@
 
                 for (int capacity = 0; capacity <= maxCapacity; capacity++)
                 {
+                    var valueExcluding = values[row - 1][capacity];
+
                     if (item.Weight > capacity)
                     {
+                        values[row][capacity] = valueExcluding;
                         continue;
                     }
 
-                    var valueExcluding = values[row - 1][capacity];
                     var valueIncluding = item.Price + values[row - 1][capacity - item.Weight];
 
                     if (valueIncluding > valueExcluding)

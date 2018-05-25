@@ -18,7 +18,7 @@
 
             var lcs = CalcLongestCommonSeq(firstSeq, secondSeq);
 
-            ReconstructSeq(firstSeq, secondSeq, lcs);
+            ReconstructSeq(firstSeq, secondSeq, lcs); // not required by Judge
         }
 
         private static void ReconstructSeq(string firstSeq, string secondSeq, int[][] lcs)
