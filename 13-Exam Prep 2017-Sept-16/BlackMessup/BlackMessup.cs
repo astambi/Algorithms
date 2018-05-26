@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class BlackMessup
     {
@@ -44,7 +45,7 @@
             var maxDecay = 1;
             var count = 0;
 
-            foreach (var atom in molecule)
+            foreach (var atom in molecule) // max atom.Mass
             {
                 if (atom.Decay > maxDecay)
                 {
@@ -67,32 +68,29 @@
         {
             var modecules = new List<SortedSet<Atom>>();
             var visited = new HashSet<string>();
-            var moleculeIndex = 0;
 
             foreach (var atomName in graph.Keys)
             {
                 if (!visited.Contains(atomName))
                 {
                     modecules.Add(new SortedSet<Atom>());
-                    MarkConnectedDFS(atomName, visited, modecules, moleculeIndex);
-
-                    moleculeIndex++;
+                    MarkConnectedDFS(atomName, visited, modecules);
                 }
             }
 
             return modecules;
         }
 
-        private static void MarkConnectedDFS(string atomName, HashSet<string> visited, List<SortedSet<Atom>> molecules, int moleculeIndex)
+        private static void MarkConnectedDFS(string atomName, HashSet<string> visited, List<SortedSet<Atom>> molecules)
         {
             visited.Add(atomName);
-            molecules[moleculeIndex].Add(atoms[atomName]);
+            molecules.Last().Add(atoms[atomName]);
 
             foreach (var atom in graph[atomName])
             {
                 if (!visited.Contains(atom.Name))
                 {
-                    MarkConnectedDFS(atom.Name, visited, molecules, moleculeIndex);
+                    MarkConnectedDFS(atom.Name, visited, molecules);
                 }
             }
         }

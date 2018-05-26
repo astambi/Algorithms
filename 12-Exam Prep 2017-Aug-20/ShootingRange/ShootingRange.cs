@@ -25,6 +25,7 @@
             if (currentScore == targetScore)
             {
                 Print(elements, marked);
+                return;
             }
 
             if (index >= elements.Length || currentScore >= targetScore)
@@ -33,13 +34,13 @@
             }
 
             var swappedElements = new HashSet<int>();
+
             for (int current = index; current < elements.Length; current++)
             {
                 var currentElement = elements[current];
                 if (!swappedElements.Contains(currentElement))
                 {
                     swappedElements.Add(currentElement);
-
                     Swap(index, current, elements);
                     marked[index] = true;
 
